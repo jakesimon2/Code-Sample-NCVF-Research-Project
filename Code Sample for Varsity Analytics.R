@@ -35,6 +35,10 @@ nums2b <- as.numeric(as.character(graph_2b_vec))
 text(x = graph2b, y = nums2b, label = nums2b, pos = 3) # Numbers are shown above the bars
 legend("topleft", legend = c("Community College Only", "Played in NCAA", "Max Number of Varsity Spots"), 
        density = c(1000, 50, 20), x.intersp = 0.5, y.intersp = 0.5)
+# Makes and exports a .csv file that will make a data frame using the GRAPH 2B data
+varsity_make_stats <- cbind(school_labels, cc_only_vector, ncaa_vector, max_var_spots_vec)
+colnames(varsity_make_stats) <- c("School Name", "Only Played in CC", "Played in NCAA", "Max. Number of Varsity Spots")
+write.csv(varsity_make_stats, paste0("~/Documents/NCVF Varsity Project/Varsity Make Stats ", gender_name, ".csv"))
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # GRAPH 3A: Pie graph measuring the demand for an open division that allowed for
 # an unlimited amount of Varsity players per team.
